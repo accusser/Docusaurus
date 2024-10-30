@@ -1,9 +1,0 @@
-## **Test page**
-
-- this is a test page to test git commit deploymet on production site
-- test one
-- tets two
-- test three
-- test four
-- test five
-- another test
