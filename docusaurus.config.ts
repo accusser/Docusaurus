@@ -13,21 +13,23 @@ const config: Config = {
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
-
-//  onBrokenLinks: 'throw',
-  onBrokenLinks: 'warn',
+  onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
+  // Internationalization settings
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'ru'], // Add more languages as needed
+    localeConfigs: {
+      en: {
+        label: 'English',
+        direction: 'ltr',
+      },
+      ru: {
+        label: 'Русский',
+        direction: 'ltr',
+      },
+    },
   },
 
   presets: [
@@ -35,38 +37,24 @@ const config: Config = {
       'classic',
       {
         docs: {
-          routeBasePath: '/',
-	    sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          //editUrl:
-        //    'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          routeBasePath: '/',  // Устанавливаем документацию на главной странице
+          sidebarPath: './sidebars.ts',
+          // Remove editUrl if not needed
+          // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        blog: false, 
-	    //{
-          //showReadingTime: true,
-          //feedOptions: {
-            //type: ['rss', 'atom'],
-            //xslt: true,
-          //},
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          //editUrl:
-          //  'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          //onInlineTags: 'warn',
-          //onInlineAuthors: 'warn',
-          //onUntruncatedBlogPosts: 'warn',
-        //},
+        blog: false,  // Disable blog if not needed
         theme: {
           customCss: './src/css/custom.css',
         },
       } satisfies Preset.Options,
     ],
   ],
+  
+  plugins: [
+    'plugin-image-zoom',
+  ],
 
   themeConfig: {
-    // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
       title: 'INTROSERV',
@@ -79,9 +67,8 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Documentation',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
@@ -96,8 +83,8 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/intro',
+              label: 'Documentation',
+              to: '/',
             },
           ],
         },
@@ -121,10 +108,6 @@ const config: Config = {
         {
           title: 'More',
           items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
             {
               label: 'GitHub',
               href: 'https://github.com/facebook/docusaurus',
