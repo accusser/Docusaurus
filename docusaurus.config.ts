@@ -7,27 +7,51 @@ const config: Config = {
   tagline: 'Docs',
   favicon: 'img/favicon.ico',
 
-  // Set the production url of your site here
   url: 'https://docs.introserv.com',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
-  onBrokenLinks: 'warn',
+  onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  // Internationalization settings
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'ru'], // Add more languages as needed
+    locales: ['en', 'ru', 'uk', 'sl', 'de', 'es', 'it', 'pl', 'tr'],
     localeConfigs: {
       en: {
+        htmlLang: 'en',
         label: 'English',
-        direction: 'ltr',
       },
       ru: {
+        htmlLang: 'ru',
         label: 'Русский',
-        direction: 'ltr',
+      },
+      uk: {
+        htmlLang: 'uk',
+        label: 'Українська',
+      },
+      sl: {
+        htmlLang: 'sl',
+        label: 'Slovenščina',
+      },
+      de: {
+        htmlLang: 'de',
+        label: 'Deutsch',
+      },
+      es: {
+        htmlLang: 'es',
+        label: 'Español',
+      },
+      it: {
+        htmlLang: 'it',
+        label: 'Italiano',
+      },
+      pl: {
+        htmlLang: 'pl',
+        label: 'Polski',
+      },
+      tr: {
+        htmlLang: 'tr',
+        label: 'Türkçe',
       },
     },
   },
@@ -37,24 +61,31 @@ const config: Config = {
       'classic',
       {
         docs: {
-          routeBasePath: '/',  // Устанавливаем документацию на главной странице
+          routeBasePath: '/',
           sidebarPath: './sidebars.ts',
-          // Remove editUrl if not needed
-          // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        blog: false,  // Disable blog if not needed
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
       } satisfies Preset.Options,
     ],
   ],
-  
+
   plugins: [
     'plugin-image-zoom',
   ],
 
   themeConfig: {
+    // You can also add a language to the "announcement bar" if needed
+    // announcementBar: {
+    //   id: 'support_us',
+    //   content: 'We are looking to revamp our docs, please fill <a target="_blank" rel="noopener noreferrer" href="#">this survey</a>',
+    //   backgroundColor: '#fafbfc',
+    //   textColor: '#091E42',
+    //   isCloseable: false,
+    // },
+    
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
       title: 'INTROSERV',
@@ -68,6 +99,10 @@ const config: Config = {
           sidebarId: 'tutorialSidebar',
           position: 'left',
           label: 'Documentation',
+        },
+        {
+          type: 'localeDropdown',
+          position: 'right',
         },
         {
           href: 'https://github.com/facebook/docusaurus',

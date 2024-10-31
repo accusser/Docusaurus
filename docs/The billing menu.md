@@ -14,6 +14,20 @@ The Personal Account consists of the following main sections:
 
 ![](invoices.jpg)
 
+### Invoice Sorting
+
+To sort invoices by their payment status, use the "Filter" button.
+
+![](filteri_en.jpg) 
+
+The following filtering options are available:
+
+- **Unpaid** — displays only invoices that have not yet been paid.
+- **Paid** — displays only paid invoices.
+- **All** — shows all invoices, regardless of payment status.
+
+Selecting one of these options updates the list of invoices on the screen according to the chosen criterion, making it easier to navigate and find the necessary documents.
+
 ## **Orders**
 
 -  In this section you can view your order history, status, and other information.
@@ -50,13 +64,15 @@ To pay for services provided by IntroServ, the user’s internal account, referr
 
 ![](balance_eng.jpg)
 
-### How it works
-
-**Balance Top-up:**
+### Balance Top-up
 
 1. The user selects the "Top-up internal balance" option. Press the button![](plus.jpg) 
+
 2. Specifies the desired top-up amount in any of the available currencies.
+
 3. Clicks the "Proceed to invoice payment" button to complete the transaction.
+
+   ###### *When adding funds in any of the available currencies, the amounts in the other currencies are automatically recalculated based on the current exchange rate. This allows the user to view the equivalent amount in other currencies according to the latest exchange rates.*
 
 ### Fund Deduction
 
